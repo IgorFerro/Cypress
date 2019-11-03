@@ -1,0 +1,23 @@
+1- Install node.js and set on a environment variables
+
+2- Install visual code
+
+3-Create the json file
+npm init on terminal
+
+4-Install Cypress dependence
+npm  install cypress --save-dev
+
+5-Open Cypress on terminal
+node_modules\.bin\cypress open
+
+6-Delete all files on examples folder
+
+7-Create a new test
+Test1.js
+
+8-Run types
+1- ./node_modules/.bin/cypress run (run without browser)
+2- ./node_modules/.bin/cypress run --headed(run with browser)
+3- ./node_modules/.bin/cypress run --browser chrome(run in chrome)
+OBS:. Cypress supports only css selectors
