@@ -21,3 +21,8 @@ Test1.js
 2- ./node_modules/.bin/cypress run --headed(run with browser)
 3- ./node_modules/.bin/cypress run --browser chrome(run in chrome)
 OBS:. Cypress supports only css selectors
+
+9-Insert Intelligent Code Completion
+// type definitions for Cypress object "cy"
+/// <reference types="cypress" />
+
