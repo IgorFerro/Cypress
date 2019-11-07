@@ -27,7 +27,15 @@ describe('My Test', function() {
 
       //Building customized Cypress commands for reusing the code
       cy.get(':nth-child(2) > .nav-link').click() 
-      cy.selectProduct()
+    
+      //Parametrize test with Multiple data sets
+      this.data.productName
+
+      this.data.productName.forEach(function(element){
+        cy.selectProduct(element)
+      })
+    
+  
       
   
 

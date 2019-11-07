@@ -13,18 +13,19 @@
 // Cypress.Commands.add("login", (email, password) => { ... })
 
 Cypress.Commands.add("selectProduct", (productName) => { 
-    cy.wait(8000)
-    cy.get('h4.card-title').each(($el, index, $list) => {
-    if($el.text().includes('Blackberry'))
+   cy.get('h4.card-title').each(($el, index, $list) => {
+    if($el.text().includes(productName))
     {
-       // cy.get('button.btn.btn-info').eql(index).click()
+          cy.get('button.btn.btn-info').eq(index).click()
 
-        cy.get(':nth-child > .card > .card-footer > .btn').click()
+        //cy.get(':nth-child > .card > .card-footer > .btn').click()
        
-        
-    }
+     }
 }) 
-})
+}) 
+
+
+
 
 //
 // -- This is a child command --
