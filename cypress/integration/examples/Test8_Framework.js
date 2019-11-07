@@ -1,6 +1,7 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
 
+import HomePage from '../../pageObjects/HomePage'
 
 describe('My Test', function() {
     
@@ -13,6 +14,7 @@ describe('My Test', function() {
     
 
     it('My Test', function() {
+        const homePage=new HomePage();
     
         //cy.visit("https://qa-web.tilix.com.br");
         cy.visit("https://rahulshettyacademy.com/angularpractice/");
@@ -26,7 +28,9 @@ describe('My Test', function() {
       cy.get('#inlineRadio3').should('be.disabled')
 
       //Building customized Cypress commands for reusing the code
-      cy.get(':nth-child(2) > .nav-link').click() 
+      //Debug comands methods pause() and debug()
+     // cy.pause()
+      cy.get(':nth-child(2) > .nav-link').click().debug() 
     
       //Parametrize test with Multiple data sets
       this.data.productName
