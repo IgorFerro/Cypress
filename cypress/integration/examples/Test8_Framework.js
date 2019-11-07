@@ -24,7 +24,11 @@ describe('My Test', function() {
       cy.get(':nth-child(4) > .ng-untouched').should('have.value',this.data.name);
       cy.get('input[name="name"]:nth-child(2)').should('have.attr','minlength','2')
       cy.get('#inlineRadio3').should('be.disabled')
-       
+
+      //Building customized Cypress commands for reusing the code
+      cy.get(':nth-child(2) > .nav-link').click() 
+      cy.selectProduct()
+      
   
 
         
