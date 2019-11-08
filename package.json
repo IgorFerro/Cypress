@@ -4,7 +4,13 @@
   "description": "Cypress Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_module\\.bin\\cypress run",
+    "headtest": "npm run test -- --headed",
+    "chromeTest":"npm run test -- --browser chrome --parallel",
+    "recordDashBoardTest":"npm run test -- --record --key 20efa6e0-bed0-4b29-b2d5-b0d9fbbb74fe --reporter mocha",
+    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\""
+
+
   },
   "repository": {
     "type": "git",
@@ -17,6 +23,8 @@
   },
   "homepage": "https://github.com/IgorFerro/Cypress#readme",
   "devDependencies": {
-    "cypress": "^3.6.0"
+    "cypress": "^3.6.0",
+    "mocha": "^6.2.2",
+    "mochawesome": "^4.1.0"
   }
 }

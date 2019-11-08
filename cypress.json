@@ -1,7 +1,9 @@
 {
-    "defaultCommandTimeout":8000,
-    "pageLoadTimeout":100000,
-    "env": {
-        "url": "https://rahulshettyacademy.com/angularpractice/"
-    }
+  "defaultCommandTimeout": 8000,
+  "pageLoadTimeout": 100000,
+  "reporter": "mochawesome",
+  "env": {
+    "url": "https://rahulshettyacademy.com/angularpractice/"
+  },
+  "projectId": "ra1hd8"
 }
