@@ -26,3 +26,7 @@ OBS:. Cypress supports only css selectors
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
 
+10-Run Tests
+cypress run = run all tests
+node_modules\.bin\cypress run --spec cypress/integration/examples/Test8_Framework.js --headed //Run a specified test
+
