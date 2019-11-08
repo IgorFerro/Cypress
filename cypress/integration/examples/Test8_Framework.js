@@ -2,6 +2,7 @@
 /// <reference types="cypress" />
 
 import HomePage from '../../pageObjects/HomePage'
+import ProductPage from '../../pageObjects/ProductPage'
 
 describe('My Test', function() {
     
@@ -15,22 +16,23 @@ describe('My Test', function() {
 
     it('My Test', function() {
         const homePage=new HomePage();
-    
-        //cy.visit("https://qa-web.tilix.com.br");
-        cy.visit("https://rahulshettyacademy.com/angularpractice/");
+        const productPage = new ProductPage();
+       //cy.visit("https://qa-web.tilix.com.br");
+       cy.visit("https://rahulshettyacademy.com/angularpractice/");
 
-        cy.get('input[name="name"]:nth-child(2)').type(this.data.name)
-        cy.get('select').select(this.data.gender)
+       homePage.getEditBox().type(this.data.name)
+       homePage.getGender(this.data.gender)
      
       //Validate attribute properties
-      cy.get(':nth-child(4) > .ng-untouched').should('have.value',this.data.name);
-      cy.get('input[name="name"]:nth-child(2)').should('have.attr','minlength','2')
-      cy.get('#inlineRadio3').should('be.disabled')
+      homePage.getTwoWayDataBiding().should('have.value',this.data.name);
+      homePage.getEditBox().should('have.attr','minlength','2')
+      homePage.getEntrepreneaur().should('be.disabled')
 
       //Building customized Cypress commands for reusing the code
       //Debug comands methods pause() and debug()
      // cy.pause()
-      cy.get(':nth-child(2) > .nav-link').click().debug() 
+     // cy.get(':nth-child(2) > .nav-link').click().debug() 
+     homePage.getShopTab().click()
     
       //Parametrize test with Multiple data sets
       this.data.productName
@@ -38,6 +40,8 @@ describe('My Test', function() {
       this.data.productName.forEach(function(element){
         cy.selectProduct(element)
       })
+productPage.checkOutButton().click();
+
     
   
       
